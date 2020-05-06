@@ -3,6 +3,17 @@ import styles from "./Form.module.css";
 
 export class Form extends Component {
   state = {};
+
+  postNotes = () => {
+    fetch("https://my-project-test-a86a8.firebaseio.com/language.json", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name: "JAVA" }),
+    });
+  };
+
   render() {
     return (
       <>
@@ -45,7 +56,11 @@ export class Form extends Component {
               onKeyDown={this.find}
             />
           </label>
-          <button type="submit" className={styles.btnForSelect}>
+          <button
+            type="submit"
+            className={styles.btnForSelect}
+            onClick={this.postNotes}
+          >
             Send
           </button>
         </form>
