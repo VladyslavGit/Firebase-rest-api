@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(226, 226, 217);
+}
+
+.wrapper {
+    padding-top: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 600px;
+    border-left: 3px solid rgba(31, 62, 129, 0.692);
+    border-right: 3px solid rgba(31, 62, 129, 0.692);
+    border-top: 3px solid rgba(31, 62, 129, 0.692);
+}
