@@ -3,6 +3,7 @@ body {
 }
 
 .wrapper {
+    position: relative;
     padding-top: 20px;
     margin: 0 auto;
     margin-top: 20px;
