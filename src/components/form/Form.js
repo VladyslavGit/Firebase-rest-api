@@ -5,8 +5,6 @@ import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 export class Form extends Component {
-  state = {};
-
   state = {
     notes: [],
     loader: true,
@@ -47,7 +45,6 @@ export class Form extends Component {
       const data = await axios.get(
         "https://my-project-test-a86a8.firebaseio.com/language.json"
       );
-      console.log(data.data, "<------Data");
 
       let transformResponse = data.data
         ? Object.keys(data.data).map((key) => ({
