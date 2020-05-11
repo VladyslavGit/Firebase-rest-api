@@ -1,0 +1,41 @@
+.header {
+    height: 60px;
+    width: 100%;
+    background-color: rgba(31, 62, 129, 0.692);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigationBox {
+    margin-left: 20px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.link {
+    color: #ebebeb;
+    text-decoration: none;
+}
+
+.signInBtn {
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    color: #ebebeb;
+    text-transform: uppercase;
+    margin-right: 20px;
+    background-image: url("../../assets/images/login.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}

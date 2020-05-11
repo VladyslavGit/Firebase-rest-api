@@ -29,6 +29,7 @@ export class Form extends Component {
         "https://my-project-test-a86a8.firebaseio.com/language.json",
         post
       );
+      console.log("data", data);
       await this.getNotes();
     } catch (error) {
       console.log(error);
