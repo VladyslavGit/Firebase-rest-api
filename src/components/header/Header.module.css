@@ -1,8 +1,16 @@
 .header {
     height: 60px;
     width: 100%;
-    background-color: rgba(31, 62, 129, 0.692);
-    margin-bottom: 20px;
+    background-color: rgb(31, 62, 129);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper {
+    width: 860px;
+    margin: 0 auto;
+    background-color: rgb(31, 62, 129);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,13 +37,12 @@
     color: #ebebeb;
     text-transform: uppercase;
     margin-right: 20px;
-    background-image: url("../../assets/images/login.png");
+    background-image: url("../../assets/images/logout.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     outline: none;
 }

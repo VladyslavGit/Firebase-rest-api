@@ -3,11 +3,15 @@ body {
 }
 
 .wrapper {
-    position: relative;
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 600px;
-    border-left: 3px solid rgba(31, 62, 129, 0.692);
-    border-right: 3px solid rgba(31, 62, 129, 0.692);
-    border-top: 3px solid rgba(31, 62, 129, 0.692);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    height: calc(100% - 117px);
+    border-left: 3px solid rgb(31, 62, 129);
+    border-right: 3px solid rgb(31, 62, 129);
+    overflow: auto;
+    overflow-x: hidden;
 }

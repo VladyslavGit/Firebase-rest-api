@@ -1,16 +1,19 @@
 import React from "react";
-import { Form } from "./form/Form";
 import styles from "./App.module.css";
+import { useRouter } from "../router";
 import { Header } from "./header/Header";
 import { Footer } from "./footer/Footer";
 
+const token = "1432";
+
 function App() {
+  const routing = useRouter(token);
   return (
-    <div className={styles.wrapper}>
-      <Header />
-      <Form />
-      <Footer />
-    </div>
+    <>
+      {token && <Header />}
+      <div className={styles.wrapper}>{routing}</div>
+      {token && <Footer />}
+    </>
   );
 }
 

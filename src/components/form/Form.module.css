@@ -1,7 +1,7 @@
 .form {
     padding: 20px 20px;
-    border-top: 3px solid rgba(31, 62, 129, 0.692);
-    border-bottom: 3px solid rgba(31, 62, 129, 0.692);
+    border-top: 3px solid rgb(31, 62, 129);
+    border-bottom: 3px solid rgb(31, 62, 129);
     background-color: transparent;
 }
 
@@ -50,11 +50,12 @@
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     border: 1px solid #ccc;
     border-radius: 6px;
-    background-color: rgba(31, 62, 129, 0.692);
-    box-shadow: 0 2px 2px rgba(31, 62, 129, 0.692);
+    background-color: rgba(31, 62, 129, 0.856);
+    box-shadow: 0 2px 2px rgba(31, 62, 129, 0.856);
     color: #ebebeb;
     font-weight: 500;
     cursor: pointer;
+    outline: none;
 }
 
 .labelForDate {
@@ -74,13 +75,13 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #05056b;
-    margin-bottom: 20px;
+    margin: 20px 0px;
     font-size: 26px;
 }
 
 .btnForSelect:hover {
-    background-color: rgba(31, 62, 129, 0.856);
-    box-shadow: 0 2px 2px rgba(31, 62, 129, 0.856);
+    background-color: rgb(31, 62, 129);
+    box-shadow: 0 2px 2px rgb(31, 62, 129);
 }
 
 .languageList {
@@ -88,7 +89,7 @@
 }
 
 .languageListItem {
-    border-bottom: 3px solid rgba(31, 62, 129, 0.692);
+    border-bottom: 3px solid rgb(31, 62, 129);
     display: flex;
     justify-content: space-between;
 }
@@ -135,7 +136,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-left: 3px solid rgba(31, 62, 129, 0.692);
+    border-left: 3px solid rgb(31, 62, 129);
 }
 
 .titleForList {
@@ -145,7 +146,7 @@
     color: #05056b;
     padding: 20px 0;
     font-size: 26px;
-    border-bottom: 3px solid rgba(31, 62, 129, 0.692);
+    border-bottom: 3px solid rgb(31, 62, 129);
 }
 
 .loader {
