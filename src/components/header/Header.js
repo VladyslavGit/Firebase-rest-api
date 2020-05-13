@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
+import { ButtonLogout } from "./ButtonLogout";
 
 export const Header = () => {
   return (
@@ -14,7 +15,7 @@ export const Header = () => {
             About
           </NavLink>
         </div>
-        <button type="button" className={styles.signInBtn}></button>
+        <ButtonLogout />
       </div>
     </div>
   );

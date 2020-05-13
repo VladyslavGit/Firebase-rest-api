@@ -1,0 +1,101 @@
+.logOutBtn {
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    color: #ebebeb;
+    text-transform: uppercase;
+    margin-right: 20px;
+    background-image: url("../../assets/images/logout.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    outline: none;
+}
+
+.modalBackdrop {
+    background-color: rgba(0, 0, 0, 0.562);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.modalBox {
+    position: relative;
+    box-shadow: 3px 8px 19px 0px rgba(0, 0, 0, 0.4);
+    width: 280px;
+    height: 280px;
+    border-radius: 6px;
+    background-color: #f0efef;
+}
+
+.btnForLogout {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    font-family: 'Montserrat', sans-serif;
+    color: #ebebeb;
+    cursor: pointer;
+    background-color: rgba(31, 62, 129, 0.856);
+    box-shadow: 0 2px 2px rgba(31, 62, 129, 0.856);
+    font-size: 16px;
+    padding: 8px 5px;
+    border-radius: 6px;
+    width: 60px;
+    height: 40px;
+    outline: none;
+}
+
+.logoutQuestion {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 112px;
+    margin-bottom: 20px;
+}
+
+.answerBox {
+    display: flex;
+    margin: 0 auto;
+    width: 150px;
+    justify-content: space-between;
+}
+
+.btnForLogout:hover {
+    background-color: rgb(31, 62, 129);
+    box-shadow: 0 2px 2px rgb(31, 62, 129);
+}
+
+@media (min-width: 768px) {
+    .btnLogout {
+        margin: 0px 20px;
+    }
+
+    .modalBox {
+        width: 600px;
+        height: 300px;
+    }
+
+    .logoutQuestion {
+        font-size: 28px;
+        margin-bottom: 25px;
+        padding-top: 98px;
+    }
+
+    .answerBox {
+        width: 210px;
+    }
+
+    .btnForLogout {
+        width: 80px;
+        font-size: 24px;
+        height: 45px;
+    }
+}

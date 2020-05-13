@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import AuthPage from "./pages/AuthPage";
+import { Header } from "./components/header/Header";
 
 export const useRouter = (authentication) => {
   console.log("authentication-----", authentication);

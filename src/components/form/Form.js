@@ -86,7 +86,7 @@ export class Form extends Component {
   render() {
     const { notes, loader } = this.state;
     return (
-      <>
+      <div className={styles.formWrapper}>
         <h2 className={styles.title}>Manage your academic plan</h2>
         <form className={styles.form} onSubmit={this.handleSubmit}>
           <label htmlFor="language" className={styles.select}>
@@ -159,7 +159,7 @@ export class Form extends Component {
             </li>
           ))}
         </ul>
-      </>
+      </div>
     );
   }
 }

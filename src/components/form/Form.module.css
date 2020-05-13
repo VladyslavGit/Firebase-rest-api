@@ -1,3 +1,8 @@
+.formWrapper {
+    border-left: 3px solid rgb(31, 62, 129);
+    border-right: 3px solid rgb(31, 62, 129);
+}
+
 .form {
     padding: 20px 20px;
     border-top: 3px solid rgb(31, 62, 129);
@@ -75,7 +80,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #05056b;
-    margin: 20px 0px;
+    padding: 20px 0px;
     font-size: 26px;
 }
 

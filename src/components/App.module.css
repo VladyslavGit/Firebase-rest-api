@@ -8,10 +8,8 @@ body {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 900px;
+    max-width: 900px;
     height: calc(100% - 117px);
-    border-left: 3px solid rgb(31, 62, 129);
-    border-right: 3px solid rgb(31, 62, 129);
     overflow: auto;
     overflow-x: hidden;
 }
