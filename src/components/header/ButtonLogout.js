@@ -4,6 +4,32 @@ import styles from "./ButtonLogout.module.css";
 export class ButtonLogout extends Component {
   state = { modalIsOpen: false };
 
+  componentDidMount = () => {
+    document.addEventListener("mousedown", this.handleClickOutside);
+    document.addEventListener("keydown", this.onKeydown);
+  };
+
+  componentWillUnmount = () => {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+    document.removeEventListener("keydown", this.onKeydown);
+  };
+
+  setBoxForRef = (node) => {
+    this.wrapperRef = node;
+  };
+
+  handleClickOutside = (event) => {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      this.setState({ modalIsOpen: false });
+    }
+  };
+
+  onKeydown = (event) => {
+    if (event.keyCode === 27) {
+      this.setState({ modalIsOpen: false });
+    }
+  };
+
   handleModal = () => {
     this.setState({ modalIsOpen: true });
   };
@@ -19,7 +45,7 @@ export class ButtonLogout extends Component {
         ></button>
         {modalIsOpen ? (
           <div className={styles.modalBackdrop}>
-            <div className={styles.modalBox}>
+            <div className={styles.modalBox} ref={this.setBoxForRef}>
               <strong className={styles.logoutQuestion}>
                 Do you really want to log out?
               </strong>
