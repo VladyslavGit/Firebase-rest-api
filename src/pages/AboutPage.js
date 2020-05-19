@@ -3,10 +3,12 @@ import styles from "./AboutPage.module.css";
 
 export const AboutPage = () => {
   return (
-    <img
-      src={require("../assets/images/about.jpg")}
-      alt="about"
-      className={styles.img}
-    />
+    <div className={styles.wrapper}>
+      <img
+        src={require("../assets/images/about.jpg")}
+        alt="about"
+        className={styles.img}
+      />
+    </div>
   );
 };

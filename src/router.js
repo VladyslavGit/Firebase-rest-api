@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import AuthPage from "./pages/AuthPage";
-import { Header } from "./components/header/Header";
+import { FeaturesPage } from "./pages/FeaturesPage";
 
 export const useRouter = (authentication) => {
   console.log("authentication-----", authentication);
@@ -12,6 +12,7 @@ export const useRouter = (authentication) => {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/about" component={AboutPage} />
+        <Route path="/features" component={FeaturesPage} />
         <Redirect exact to="/" />
       </Switch>
     );

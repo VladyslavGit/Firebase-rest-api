@@ -16,7 +16,7 @@
 }
 
 .modalBackdrop {
-    background-color: rgba(0, 0, 0, 0.562);
+    background-color: rgba(0, 0, 0, 0.774);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +30,7 @@
 
 .modalBox {
     position: relative;
-    box-shadow: 3px 8px 19px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 3px 8px 19px 0px rgba(0, 0, 0, 0.432);
     width: 280px;
     height: 280px;
     border-radius: 6px;

@@ -1,12 +1,12 @@
 .formWrapper {
-    border-left: 3px solid rgb(31, 62, 129);
-    border-right: 3px solid rgb(31, 62, 129);
+    border-left: 3px solid rgb(0, 0, 0);
+    border-right: 3px solid rgb(0, 0, 0);
 }
 
 .form {
     padding: 20px 20px;
-    border-top: 3px solid rgb(31, 62, 129);
-    border-bottom: 3px solid rgb(31, 62, 129);
+    border-top: 3px solid rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(0, 0, 0);
     background-color: transparent;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .languageListItem {
-    border-bottom: 3px solid rgb(31, 62, 129);
+    border-bottom: 3px solid rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
 }
@@ -141,7 +141,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-left: 3px solid rgb(31, 62, 129);
+    border-left: 3px solid rgb(0, 0, 0);
 }
 
 .titleForList {
@@ -151,7 +151,7 @@
     color: #05056b;
     padding: 20px 0;
     font-size: 26px;
-    border-bottom: 3px solid rgb(31, 62, 129);
+    border-bottom: 3px solid rgb(0, 0, 0);
 }
 
 .loader {

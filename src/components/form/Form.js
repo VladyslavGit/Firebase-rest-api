@@ -122,7 +122,7 @@ export class Form extends Component {
               name="comment"
               placeholder="Add your comments ..."
               autoComplete="off"
-              maxLength="120"
+              // maxLength="120"
             />
           </label>
           <button type="submit" className={styles.btnForSelect}>
