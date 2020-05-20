@@ -4,7 +4,7 @@ import { useRouter } from "../router";
 import { Header } from "./header/Header";
 import { Footer } from "./footer/Footer";
 
-const token = "6";
+const token = "";
 
 function App() {
   const routing = useRouter(token);
