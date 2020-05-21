@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import styles from "./LoginPage.module.css";
@@ -73,120 +73,92 @@ export const LoginPage = (props) => {
       : setPassword(e.target.value);
   };
 
-  const pLogo = () => {
-    const width = document.body.clientWidth;
-    if (width > 767) {
-      return (
-        <div className={styles.plogo}>
-          <p>KidsLike</p>
-          <img
-            className={styles.logoimg}
-            src={require("../../assets/images/logout.png")}
-            alt="logo"
-          />
-        </div>
-      );
-    }
-  };
-
-  const screenW = () => {
-    const width = document.body.clientWidth;
-    if (width < 768) {
-      return (
-        <img
-          className={styles.mobimg}
-          src={require("../../assets/images/study.jpg")}
-          alt="mobileimg"
-        />
-      );
-    } else if (width < 1200) {
-      return (
-        <img
-          className={styles.mobimg}
-          src={require("../../assets/images/study.jpg")}
-          alt="tabletimg"
-        />
-      );
-    } else {
-      return (
-        <img
-          className={styles.mobimg}
-          src={require("../../assets/images/study.jpg")}
-          alt="maintimg"
-        />
-      );
-    }
-  };
-
   return (
     <div className={styles.authContainer}>
       <div className={styles.formContainer}>
-        <h2 className={styles.authHeader}>
-          Виконуй завдання, отримай класні призи!
-        </h2>
-        <form className={styles.form}>
-          <h2 className={styles.authText}>
-            Ви можете авторизуватися за допомогою e-mail та паролю, попередньо
-            зареєструвавшись
-          </h2>
-          <h2 className={styles.authTextInput}>Email</h2>
-          <input
-            className={styles.input}
-            type="email"
-            name="email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-            required
-            placeholder={
-              formik.errors.email ? formik.errors.email : "Enter Email"
-            }
-            onChange={handleChange}
-            value={email}
-          />
-          <h2 className={styles.authTextInput}>Пароль</h2>
-          <input
-            className={styles.input}
-            type="password"
-            name="password"
-            required
-            placeholder={
-              formik.errors.password ? formik.errors.password : "Enter password"
-            }
-            onChange={handleChange}
-            value={password}
-          />
-          <div className={styles.divFlex}>
-            <div className={styles.divbtn}>
-              <button
-                className={styles.btn}
-                type="button"
-                value="LOGIN_USER"
-                onClick={(e) => {
-                  formik.handleSubmit();
-                  handleSubmit(e);
-                }}
-              >
-                Увійти
-              </button>
+        <div>
+          <form className={styles.form}>
+            <h2 className={styles.authText}>
+              If you have an account with us, log in using your email address
+              and password
+            </h2>
+            {/* <h2 className={styles.authTextInput}>Email</h2> */}
+            <input
+              className={styles.input}
+              type="email"
+              name="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              required
+              placeholder={formik.errors.email ? formik.errors.email : "Email"}
+              onChange={handleChange}
+              value={email}
+              maxLength="16"
+            />
+            {/* <h2 className={styles.authTextInput}>Password</h2> */}
+            <input
+              className={styles.input}
+              type="password"
+              name="password"
+              required
+              placeholder={
+                formik.errors.password ? formik.errors.password : "Password"
+              }
+              onChange={handleChange}
+              value={password}
+              maxLength="16"
+            />
+            <div className={styles.divFlex}>
+              <div className={styles.divbtn}>
+                <button
+                  className={styles.btn}
+                  type="button"
+                  value="LOGIN_USER"
+                  onClick={(e) => {
+                    formik.handleSubmit();
+                    handleSubmit(e);
+                  }}
+                >
+                  Login
+                </button>
+              </div>
             </div>
+          </form>
+          <form className={styles.form}>
+            <h2 className={styles.authText}>
+              Don't have an account? Register one!
+            </h2>
             <div className={styles.divbtn}>
-              <button
-                className={styles.btn}
-                type="button"
-                value="REGISTR_USER"
-                onClick={(e) => {
-                  formik.handleSubmit();
-                  handleSubmit(e);
-                }}
-              >
-                Зареєструватися
-              </button>
+              <NavLink to="/authentication/register" className={styles.navlink}>
+                <div className={styles.divbtn}>
+                  <button className={styles.btn} type="button">
+                    register
+                  </button>
+                </div>
+              </NavLink>
             </div>
-            <Link to="/authentication/register">go to register</Link>
-          </div>
-        </form>
-        {pLogo()}
+          </form>
+        </div>
+        <div className={styles.plogo}>
+          <a
+            href="https://github.com/VladyslavGit/firebase-rest-api"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.linkLogo}
+          >
+            Schedule App
+          </a>
+          <img
+            className={styles.logoimg}
+            src={require("../../assets/images/logo.png")}
+            alt="logo"
+          />
+        </div>
       </div>
-      {screenW()}
+      <img
+        className={styles.mobimg}
+        src={require("../../assets/images/poster.jpg")}
+        alt="maintimg"
+      />
     </div>
   );
 };

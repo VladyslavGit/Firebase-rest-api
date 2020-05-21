@@ -77,57 +77,9 @@ export const RegisterPage = (props) => {
       : setPassword(e.target.value);
   };
 
-  const pLogo = () => {
-    const width = document.body.clientWidth;
-    if (width > 767) {
-      return (
-        <div className={styles.plogo}>
-          <p>KidsLike</p>
-          <img
-            className={styles.logoimg}
-            src={require("../../assets/images/logout.png")}
-            alt="logo"
-          />
-        </div>
-      );
-    }
-  };
-
-  const screenW = () => {
-    const width = document.body.clientWidth;
-    if (width < 768) {
-      return (
-        <img
-          className={styles.mobimg}
-          src={require("../../assets/images/study.jpg")}
-          alt="mobileimg"
-        />
-      );
-    } else if (width < 1200) {
-      return (
-        <img
-          className={styles.mobimg}
-          src={require("../../assets/images/study.jpg")}
-          alt="tabletimg"
-        />
-      );
-    } else {
-      return (
-        <img
-          className={styles.mobimg}
-          src={require("../../assets/images/study.jpg")}
-          alt="maintimg"
-        />
-      );
-    }
-  };
-
   return (
     <div className={styles.authContainer}>
       <div className={styles.formContainer}>
-        <h2 className={styles.authHeader}>
-          Виконуй завдання, отримай класні призи!
-        </h2>
         <form className={styles.form}>
           <h2 className={styles.authText}>
             Ви можете авторизуватися за допомогою e-mail та паролю, попередньо
@@ -158,7 +110,7 @@ export const RegisterPage = (props) => {
             onChange={handleChange}
             value={email}
           />
-          <h2 className={styles.authTextInput}>Пароль</h2>
+          <h2 className={styles.authTextInput}>Password</h2>
           <input
             className={styles.input}
             type="password"
@@ -200,22 +152,27 @@ export const RegisterPage = (props) => {
             <Link to="/authentication/login">go to login</Link>
           </div>
         </form>
-        {pLogo()}
+        <div className={styles.plogo}>
+          <a
+            href="https://github.com/VladyslavGit/firebase-rest-api"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.linkLogo}
+          >
+            Schedule App
+          </a>
+          <img
+            className={styles.logoimg}
+            src={require("../../assets/images/logo.png")}
+            alt="logo"
+          />
+        </div>
       </div>
-      {screenW()}
+      <img
+        className={styles.mobimg}
+        src={require("../../assets/images/poster.jpg")}
+        alt="maintimg"
+      />
     </div>
   );
 };
-
-// export const RegisterPage = (props) => {
-//   console.log("props RegisterPage", props);
-//   return (
-//     <div>
-//       <form>
-//         <input placeholder="enter your login" />
-//         <input placeholder="enter your email" />
-//         <input placeholder="enter your password" />
-//       </form>
-//     </div>
-//   );
-// };

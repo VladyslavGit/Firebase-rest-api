@@ -11,6 +11,13 @@
     background-color: #000000;
 }
 
+.formContainer {
+    display: flex;
+    height: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .authHeader {
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
@@ -20,37 +27,23 @@
 }
 
 .authText {
-    font-size: 10px;
+    text-align: center;
+    font-size: 14px;
     font-family: "Montserrat", sans-serif;
     color: rgb(133, 133, 152);
     line-height: 1.7;
-    text-align: left;
-    padding-left: 10px;
+    margin-bottom: 20px;
 }
 
 .authTextInput {
-    font-size: 10px;
+    font-size: 14px;
     font-family: "Montserrat", sans-serif;
     color: rgb(133, 133, 152);
     line-height: 1.7;
     text-align: left;
-    margin-top: 23px;
     margin-bottom: 18px;
     padding-left: 10px;
-}
-
-.btn {
-    flex: 0 0 20%;
-    height: 30px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 700;
-    background-color: rgba(65, 65, 175, 1);
-    color: #fff;
-}
-
-.divbtn {
-    width: 118px;
+    text-align: center;
 }
 
 .btn:focus,
@@ -72,26 +65,21 @@
     border: 0;
     font-family: "Montserrat", sans-serif;
     color: rgb(166, 171, 185);
-    padding: 0 10px;
+    padding: 0 20px;
     display: block;
-    width: 246px;
+    width: 300px;
     height: 40px;
     border: 1px solid #c0c0c0;
-    border-radius: 4px;
-    font-size: 16px;
-    margin: 16px auto;
-    background-color: #f5f7fa;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 20px auto;
+    background-color: #e9e9e9da;
     text-align: center;
 }
 
 .input::placeholder {
-    color: red;
-}
-
-.divFlex {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 12px;
+    color: rgb(99, 99, 112)
 }
 
 .input:focus {
@@ -101,19 +89,22 @@
 }
 
 .btn {
-    font-size: 10px;
+    display: block;
+    margin: 0 auto;
+    font-size: 14px;
+    text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 700;
     color: #fff;
-    background-color: rgb(239, 187, 67);
+    background-color: rgb(42, 54, 38);
     box-shadow: 0px 4px 6px 0px rgba(29, 29, 27, 0.15);
-    width: 118px;
-    height: 48px;
+    width: 300px;
+    height: 40px;
 }
 
 .btn:hover {
-    background-color: rgba(65, 65, 175, 0.9);
+    background-color: rgba(32, 32, 68, 0.9);
     transition: 0.5s;
 }
 
@@ -130,22 +121,46 @@
 }
 
 .mobimg {
-    width: 50%;
-    height: 50%;
+    width: 35%;
+    height: 90%;
+    margin-right: 80px;
 }
 
 .plogo {
     display: flex;
     align-items: center;
-    margin-top: 34px;
     justify-content: center;
-    font-size: 9px;
+    font-size: 16px;
     font-family: "Montserrat", sans-serif;
+    margin-bottom: 10px;
+}
+
+.linkLogo {
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 500;
     color: rgb(133, 133, 152);
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .logoimg {
-    width: 13px;
-    height: 13px;
-    margin: 10px;
+    width: 45px;
+    height: 45px;
+    margin-left: 14px;
+}
+
+.form {
+    width: 400px;
+    padding: 30px 30px;
+    border: 2px solid #ffffff;
+    box-shadow: 2px 2px 12px 2px #fffefe;
+    margin-bottom: 60px;
+    margin-top: 50px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+}
+
+.navlink {
+    text-decoration: none;
 }
