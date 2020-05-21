@@ -52,7 +52,6 @@ export class Form extends Component {
             id: key,
           }))
         : [];
-
       this.setState({ notes: transformResponse });
     } catch (error) {
       console.log(error);
