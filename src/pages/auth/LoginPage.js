@@ -79,7 +79,7 @@ export const LoginPage = (props) => {
         <div>
           <form className={styles.form}>
             <h2 className={styles.authText}>
-              If you have an account with us, log in using your email address
+              If you have an account with us, sign in using your email address
               and password
             </h2>
             {/* <h2 className={styles.authTextInput}>Email</h2> */}
@@ -118,7 +118,7 @@ export const LoginPage = (props) => {
                     handleSubmit(e);
                   }}
                 >
-                  Login
+                  Sign in
                 </button>
               </div>
             </div>
