@@ -17,24 +17,21 @@ export class Form extends Component {
   postNotes = async (post) => {
     this.setState({ loader: true });
     await services.sendData(post);
-    await this.getNotes();
-    this.setState({ loader: false });
+    await this.getNotes().finally(() => this.setState({ loader: false }));
   };
 
   getNotes = async () => {
     this.setState({ loader: true });
     services
       .getData()
-      .then((transformResponse) =>
-        this.setState({ notes: transformResponse, loader: false })
-      );
+      .then((transformResponse) => this.setState({ notes: transformResponse }))
+      .finally(() => this.setState({ loader: false }));
   };
 
   deleteNote = async (id) => {
     this.setState({ loader: true });
     await services.deleteData(id);
-    await this.getNotes();
-    this.setState({ loader: false });
+    await this.getNotes().finally(() => this.setState({ loader: false }));
   };
 
   handleSubmit = (evt) => {
