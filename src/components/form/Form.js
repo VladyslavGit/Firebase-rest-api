@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import services from "../../services/services";
 import styles from "./Form.module.css";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -8,7 +8,6 @@ export class Form extends Component {
   state = {
     notes: [],
     loader: true,
-    error: null,
   };
 
   componentDidMount() {
@@ -16,62 +15,26 @@ export class Form extends Component {
   }
 
   postNotes = async (post) => {
-    // fetch("https://my-project-test-a86a8.firebaseio.com/language.json", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ name: "JAVA" }),
-    // });
     this.setState({ loader: true });
-    try {
-      const data = await axios.post(
-        "https://my-project-test-a86a8.firebaseio.com/language.json",
-        post
-      );
-      console.log("data", data);
-      await this.getNotes();
-    } catch (error) {
-      console.log(error);
-      this.setState({ error });
-    } finally {
-      this.setState({ loader: false });
-    }
+    await services.sendData(post);
+    await this.getNotes();
+    this.setState({ loader: false });
   };
 
   getNotes = async () => {
     this.setState({ loader: true });
-    try {
-      const data = await axios.get(
-        "https://my-project-test-a86a8.firebaseio.com/language.json"
+    services
+      .getData()
+      .then((transformResponse) =>
+        this.setState({ notes: transformResponse, loader: false })
       );
-
-      let transformResponse = data.data
-        ? Object.keys(data.data).map((key) => ({
-            ...data.data[key],
-            id: key,
-          }))
-        : [];
-      this.setState({ notes: transformResponse });
-    } catch (error) {
-      console.log(error);
-    } finally {
-      this.setState({ loader: false });
-    }
   };
 
   deleteNote = async (id) => {
     this.setState({ loader: true });
-    try {
-      await axios.delete(
-        `https://my-project-test-a86a8.firebaseio.com/language/${id}.json`
-      );
-      await this.getNotes();
-    } catch (error) {
-      console.log(error);
-    } finally {
-      this.setState({ loader: false });
-    }
+    await services.deleteData(id);
+    await this.getNotes();
+    this.setState({ loader: false });
   };
 
   handleSubmit = (evt) => {
@@ -121,7 +84,7 @@ export class Form extends Component {
               name="comment"
               placeholder="Add your comments ..."
               autoComplete="off"
-              // maxLength="120"
+              maxLength="300"
             />
           </label>
           <button type="submit" className={styles.btnForSelect}>
