@@ -6,7 +6,6 @@ const initialState = {
   userEmail: null,
   userToken: null,
   userId: null,
-  weekPoints: 0,
 };
 
 const reducer = {
@@ -30,10 +29,6 @@ const reducer = {
       userPoint: payload,
     };
   },
-  [types.USER_TASK_POINTS]: (state, { payload }) => ({
-    ...state,
-    weekPoints: payload,
-  }),
   [types.USER_SIGNOUT]: () => initialState,
 };
 

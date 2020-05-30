@@ -69,6 +69,7 @@ export const RegisterPage = (props) => {
 
     await setEmail("");
     await setPassword("");
+    await setName("");
   };
 
   const handleChange = async (e) => {
@@ -129,7 +130,6 @@ export const RegisterPage = (props) => {
                   Register
                 </button>
               </div>
-              {/* <Link to="/authentication/login">go to login</Link> */}
             </div>
           </form>
           <form className={styles.form}>

@@ -82,7 +82,6 @@ export const LoginPage = (props) => {
               If you have an account with us, sign in using your email address
               and password
             </h2>
-            {/* <h2 className={styles.authTextInput}>Email</h2> */}
             <input
               className={styles.input}
               type="email"
@@ -94,7 +93,6 @@ export const LoginPage = (props) => {
               value={email}
               maxLength="16"
             />
-            {/* <h2 className={styles.authTextInput}>Password</h2> */}
             <input
               className={styles.input}
               type="password"

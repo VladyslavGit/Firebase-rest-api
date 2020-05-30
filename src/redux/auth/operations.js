@@ -1,29 +1,31 @@
 import types from "./types";
-// import { services } from "../../services/services";
+import { auth } from "../../firebase/config";
 
-export const registerUser = (param) => async (dispatch, getState) => {
-  console.log("param REGISTR", param);
-  //   const data = await services.createUser(param);
-  //   if (!data) {
-  //     dispatch({ type: types.USER_SIGNOUT, payload: {} });
-  //   } else {
-
-  //     dispatch({ type: types.REGISTR_USER, payload: data.data });
-  //   }
+export const registerUser = ({ email, password, name }) => async (
+  dispatch,
+  getState
+) => {
+  try {
+    const user = await auth.createUserWithEmailAndPassword(email, password);
+    const update = auth.currentUser;
+    await update.updateProfile({
+      displayName: name,
+    });
+  } catch (err) {
+    console.log(err.code);
+    console.log(err.message);
+  }
 };
 
-export const loginUser = (param) => async (dispatch, getState) => {
-  console.log("param LOGIN", param);
-
-  //   const data = await services.userSignIn(param);
-  //   if (!data) {
-  //     dispatch({ type: types.USER_SIGNOUT, payload: {} });
-  //   } else {
-  //     dispatch({ type: types.LOGIN_USER, payload: data.data });
-  //   }
+export const loginUser = ({ email, password }) => (dispatch, getState) => {
+  try {
+    const user = auth.signInWithEmailAndPassword(email, password);
+  } catch (err) {
+    console.log(err.code);
+    console.log(err.message);
+  }
 };
+
 export const logoutUser = (param) => async (dispatch, getState) => {
-  // console.log("param LOGOUT", param);
-
   dispatch({ type: types.USER_SIGNOUT, payload: {} });
 };
