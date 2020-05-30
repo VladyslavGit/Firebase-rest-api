@@ -1,4 +1,3 @@
-import types from "./types";
 import { auth } from "../../firebase/config";
 
 export const registerUser = ({ email, password, name }) => async (
@@ -26,6 +25,11 @@ export const loginUser = ({ email, password }) => (dispatch, getState) => {
   }
 };
 
-export const logoutUser = (param) => async (dispatch, getState) => {
-  dispatch({ type: types.USER_SIGNOUT, payload: {} });
+export const logoutUser = () => {
+  try {
+    const user = auth.signOut();
+  } catch (err) {
+    console.log(err.code);
+    console.log(err.message);
+  }
 };

@@ -3,16 +3,13 @@ import styles from "./ButtonLogout.module.css";
 import { connect } from "react-redux";
 import { logoutUser } from "../../redux/auth/operations";
 
-const mapDispatchToProps = {
-  logoutUser,
-};
-
 class ButtonLogout extends Component {
   state = { modalIsOpen: false };
 
   componentDidMount = () => {
     document.addEventListener("mousedown", this.handleClickOutside);
     document.addEventListener("keydown", this.onKeydown);
+    console.log("this.props", this.props.logOutAction);
   };
 
   componentWillUnmount = () => {
@@ -40,6 +37,10 @@ class ButtonLogout extends Component {
     this.setState({ modalIsOpen: true });
   };
 
+  logOut = () => {
+    this.props.logOutAction();
+  };
+
   render() {
     const { modalIsOpen } = this.state;
     return (
@@ -59,7 +60,7 @@ class ButtonLogout extends Component {
                 <button
                   type="button"
                   className={styles.btnForLogout}
-                  onClick={this.props.logoutUser}
+                  onClick={this.logOut}
                 >
                   Yes
                 </button>
@@ -81,6 +82,14 @@ class ButtonLogout extends Component {
       </>
     );
   }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    logOutAction: () => {
+      dispatch(logoutUser);
+    },
+  };
 }
 
 export default connect(null, mapDispatchToProps)(ButtonLogout);
