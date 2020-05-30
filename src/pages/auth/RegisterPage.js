@@ -6,7 +6,6 @@ import styles from "./LoginPage.module.css";
 import { registerUser, loginUser } from "../../redux/auth/operations";
 
 export const RegisterPage = (props) => {
-  console.log("props", props);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -16,6 +15,11 @@ export const RegisterPage = (props) => {
 
   const validate = () => {
     const errors = {};
+    if (!name) {
+      errors.name = "Required Name";
+    } else if (name.length < 3) {
+      errors.password = "Must be 3 characters or more";
+    }
     if (!email) {
       errors.email = "Required email";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
@@ -31,7 +35,6 @@ export const RegisterPage = (props) => {
     } else {
       mainerror = true;
     }
-
     return errors;
   };
 
@@ -47,16 +50,16 @@ export const RegisterPage = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const contact = {
+      name: name,
       email: email,
       password: password,
-      name: name,
     };
     if (mainerror === false) {
       addContact(contact, e.target.value);
     } else {
+      setName("");
       setEmail("");
       setPassword("");
-      setName("");
     }
   };
 
@@ -66,16 +69,20 @@ export const RegisterPage = (props) => {
     } else if (value === "LOGIN_USER") {
       dispatch(loginUser(contact));
     }
-
+    await setName("");
     await setEmail("");
     await setPassword("");
-    await setName("");
   };
 
-  const handleChange = async (e) => {
-    e.target.name === "email"
-      ? setEmail(e.target.value)
-      : setPassword(e.target.value);
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+    if (name === "name") {
+      setName(value);
+    } else if (name === "email") {
+      setEmail(value);
+    } else if (name === "password") {
+      setPassword(value);
+    }
   };
 
   return (
@@ -89,9 +96,7 @@ export const RegisterPage = (props) => {
               type="text"
               name="name"
               required
-              placeholder={
-                formik.errors.email ? formik.errors.email : "Username"
-              }
+              placeholder={formik.errors.name ? formik.errors.name : "Username"}
               onChange={handleChange}
               value={name}
             />

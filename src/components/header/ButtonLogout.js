@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import styles from "./ButtonLogout.module.css";
+import { connect } from "react-redux";
+import { logoutUser } from "../../redux/auth/operations";
 
-export class ButtonLogout extends Component {
+const mapDispatchToProps = {
+  logoutUser,
+};
+
+class ButtonLogout extends Component {
   state = { modalIsOpen: false };
 
   componentDidMount = () => {
@@ -53,7 +59,7 @@ export class ButtonLogout extends Component {
                 <button
                   type="button"
                   className={styles.btnForLogout}
-                  onClick={() => console.log("Exit")}
+                  onClick={this.props.logoutUser}
                 >
                   Yes
                 </button>
@@ -76,3 +82,5 @@ export class ButtonLogout extends Component {
     );
   }
 }
+
+export default connect(null, mapDispatchToProps)(ButtonLogout);

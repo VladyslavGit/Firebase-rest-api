@@ -91,7 +91,6 @@ export const LoginPage = (props) => {
               placeholder={formik.errors.email ? formik.errors.email : "Email"}
               onChange={handleChange}
               value={email}
-              maxLength="16"
             />
             <input
               className={styles.input}

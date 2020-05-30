@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
-import { ButtonLogout } from "./ButtonLogout";
+import ButtonLogout from "./ButtonLogout";
 
 export const Header = () => {
   return (

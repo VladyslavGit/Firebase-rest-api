@@ -79,7 +79,7 @@
 }
 
 .input::placeholder {
-    color: rgb(99, 99, 112)
+    color: rgb(99, 99, 112);
 }
 
 .input:focus {
