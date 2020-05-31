@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import services from "../../services/services";
+import { services } from "../../services/services";
 import styles from "./Form.module.css";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";

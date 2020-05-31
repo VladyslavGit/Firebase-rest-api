@@ -1,35 +1,16 @@
-import { auth } from "../../firebase/config";
+import { services } from "./../../services/services";
 
 export const registerUser = ({ email, password, name }) => async (
   dispatch,
   getState
 ) => {
-  try {
-    const user = await auth.createUserWithEmailAndPassword(email, password);
-    const update = auth.currentUser;
-    await update.updateProfile({
-      displayName: name,
-    });
-  } catch (err) {
-    console.log(err.code);
-    console.log(err.message);
-  }
+  services.createUser({ name, email, password });
 };
 
 export const loginUser = ({ email, password }) => (dispatch, getState) => {
-  try {
-    const user = auth.signInWithEmailAndPassword(email, password);
-  } catch (err) {
-    console.log(err.code);
-    console.log(err.message);
-  }
+  services.signInUser({ email, password });
 };
 
 export const logoutUser = () => {
-  try {
-    const user = auth.signOut();
-  } catch (err) {
-    console.log(err.code);
-    console.log(err.message);
-  }
+  services.signOutUser();
 };

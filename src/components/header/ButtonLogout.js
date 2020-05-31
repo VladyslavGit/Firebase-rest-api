@@ -9,7 +9,6 @@ class ButtonLogout extends Component {
   componentDidMount = () => {
     document.addEventListener("mousedown", this.handleClickOutside);
     document.addEventListener("keydown", this.onKeydown);
-    console.log("this.props", this.props.logOutAction);
   };
 
   componentWillUnmount = () => {
